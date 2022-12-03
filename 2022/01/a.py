@@ -1,6 +1,6 @@
 from pprint import pprint
 
-filename = "1.txt"
+filename = "2022/01/input.txt"
 
 lines = []
 with open(filename) as f:
@@ -16,4 +16,4 @@ for line in lines:
         total += int(line[:-1])
 
 totals.sort()
-print(totals[-1])
+print(sum(totals[-3:]))
