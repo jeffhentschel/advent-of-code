@@ -1,5 +1,6 @@
 # Session cookie
 .session
+input.txt
 
 # macOS files
 .DS_Store
