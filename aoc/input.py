@@ -11,4 +11,4 @@ def read_input(src_file):
     LOG.info(f"Loading file {input_file}")
     with open(input_file) as f:
         input = f.read()
-    return input
+    return input[:-1]

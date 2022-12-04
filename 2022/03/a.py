@@ -16,7 +16,7 @@ def priority(c):
 
 
 total = 0
-for line in input.split("\n")[:-1]:
+for line in input.split("\n"):
     half = int(len(line) / 2)
     left = set(line[:half])
     right = set(line[half:])

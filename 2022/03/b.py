@@ -18,7 +18,7 @@ def priority(c):
 
 
 total = 0
-lines = input.split("\n")[:-1]
+lines = input.split("\n")
 for i in range(0, len(lines), 3):
     match = (
         set(lines[i]).intersection(set(lines[i + 1])).intersection(lines[i + 2]).pop()
