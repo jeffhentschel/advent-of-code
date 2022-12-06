@@ -2,7 +2,7 @@
 
 YEAR=$(date +%Y)
 DAY=$(date +%d)
-DIR=$YEAR/$DAY
+DIR=y$YEAR/d$DAY
 
 if [ "$1" != "-o" ] && [ -d $DIR ]; then
   echo "$DIR already setup. Use -o to overwrite."
@@ -16,8 +16,11 @@ echo "📂 Creating directory $DIR"
 mkdir -p $DIR
 
 echo "🐍 Initializing template"
-cp template.py $DIR/a.py
-cp template.py $DIR/b.py
+TEMPLATE_DIR=template
+cp $TEMPLATE_DIR/template.py $DIR/a.py
+cp $TEMPLATE_DIR/template.py $DIR/b.py
+cp $TEMPLATE_DIR/test_a_template.py $DIR/test_a.py
+cp $TEMPLATE_DIR/test_b_template.py $DIR/test_b.py
 touch $DIR/__init__.py
 
 echo "🗒️  Fetching input file"

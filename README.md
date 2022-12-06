@@ -16,7 +16,7 @@ Run today's code:
 Run another day's code:
 
 ```sh
-python -m 2022.01.a
+python -m y2022.d01.a
 ```
 
 ## Setup
