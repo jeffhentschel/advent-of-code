@@ -136,3 +136,4 @@ dmypy.json
 .pyre/
 
 *_alt/
+slack_leaderboard.py
