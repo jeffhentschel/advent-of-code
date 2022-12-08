@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 
-YEAR=$(date +%Y)
-DAY=$(date +%d)
+YEAR="${2:-$(date +%Y)}"
+DAY="${3:-$(date +%d)}"
 
 python -m pytest y$YEAR/d$DAY/test_$1.py
 
 echo ""
-echo "-- ANSWER --"
-ANSWER=$(python -m y$YEAR.d$DAY.$1)
-echo $ANSWER
-echo -n $ANSWER | pbcopy
-echo ""
+python -m y$YEAR.d$DAY.$1

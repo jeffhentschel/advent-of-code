@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-YEAR=$(date +%Y)
-DAY=$(date +%d)
+YEAR="${1:-$(date +%Y)}"
+DAY="${2:-$(date +%d)}"
 DIR=y$YEAR/d$DAY
 
-if [ "$1" != "-o" ] && [ -d $DIR ]; then
+if [ "$3" != "-o" ] && [ -d $DIR ]; then
   echo "$DIR already setup. Use -o to overwrite."
   exit 1
 fi
@@ -27,4 +27,4 @@ echo "🗒️  Fetching input file"
 curl --silent \
   --output $DIR/input.txt \
   --cookie "$SESSION_COOKIE" \
-  https://adventofcode.com/$YEAR/day/$(date +%-d)/input
+  https://adventofcode.com/$YEAR/day/$DAY/input
