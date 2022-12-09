@@ -1,8 +1,8 @@
-import subprocess
 import logging
 import math
 import os
 import re
+import subprocess
 from functools import reduce
 from pprint import pprint
 

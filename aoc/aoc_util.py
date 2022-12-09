@@ -1,5 +1,6 @@
-import os
 import logging
+import os
+
 from aocd import submit as aoc_submit
 
 logging.basicConfig(level=logging.DEBUG)
@@ -8,19 +9,21 @@ LOG = logging.getLogger(__name__)
 
 
 class AocUtil:
-    def __init__(self, src_file, session_cookie = None):
+    def __init__(self, src_file, session_cookie=None):
         path = os.path.realpath(src_file)
-        parts = path.split('/')
+        parts = path.split("/")
         self.part = parts[-1][:-3]
         self.day = int(parts[-2][1:])
         self.year = int(parts[-3][1:])
         self.src_dir = os.path.dirname(path)
-        LOG.info(f"Initializing AoC {self.year} challenge day {self.day} part {self.part}")
+        LOG.info(
+            f"Initializing AoC {self.year} challenge day {self.day} part {self.part}"
+        )
 
     def read_input(self):
         input_file = os.path.join(self.src_dir, "input.txt")
         LOG.info(f"Loading file {input_file}")
-        
+
         with open(input_file) as f:
             input = f.read()
         return input[:-1]
@@ -37,14 +40,11 @@ class AocUtil:
         print(top)
 
 
-
-
-        
 # def aoc_submit(answer, src_file):
 #     parts = os.path.dirname().split('/')
 #     print(f"Submitting solution for {parts}")
 #     # submit()
-    
+
 
 # def read_input(src_file):
 #     src_dir = os.path.dirname(os.path.realpath(src_file))

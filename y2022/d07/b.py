@@ -1,9 +1,9 @@
-import subprocess
-import sys
 import logging
 import math
 import os
 import re
+import subprocess
+import sys
 from functools import reduce
 from pprint import pprint
 
