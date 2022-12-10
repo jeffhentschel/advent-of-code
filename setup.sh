@@ -24,7 +24,4 @@ cp $TEMPLATE_DIR/test_b_template.py $DIR/test_b.py
 touch $DIR/__init__.py
 
 echo "🗒️  Fetching input file"
-curl --silent \
-  --output $DIR/input.txt \
-  --cookie "$SESSION_COOKIE" \
-  https://adventofcode.com/$YEAR/day/$DAY/input
+aocd $DAY $YEAR > $DIR/input.txt
