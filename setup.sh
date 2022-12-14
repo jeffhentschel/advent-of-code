@@ -9,7 +9,8 @@ if [ "$3" != "-o" ] && [ -d $DIR ]; then
   exit 1
 fi
 
-SESSION_COOKIE=$(cat .session)
+AOC_SESSION=$(cat .session)
+export AOC_SESSION
 
 echo "----- $YEAR Day $DAY -----"
 echo "📂 Creating directory $DIR"
@@ -25,3 +26,6 @@ touch $DIR/__init__.py
 
 echo "🗒️  Fetching input file"
 aocd $DAY $YEAR > $DIR/input.txt
+
+echo "🌎  Opening challenge"
+python setup.py $YEAR $DAY

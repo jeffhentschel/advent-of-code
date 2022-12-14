@@ -5,5 +5,9 @@ DAY="${3:-$(date +%d)}"
 
 python -m pytest y$YEAR/d$DAY/test_$1.py
 
-echo ""
-python -m y$YEAR.d$DAY.$1
+if [ $? -eq 0 ]; then
+    echo ""
+    python -m y$YEAR.d$DAY.$1
+else
+    echo "Tests failed"
+fi
