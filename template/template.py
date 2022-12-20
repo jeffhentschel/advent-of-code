@@ -1,3 +1,5 @@
+from __future__ import annotations
+import sys
 import logging
 import math
 import os
@@ -12,7 +14,7 @@ LOG = logging.getLogger(__name__)
 
 
 def solve(input: str):
-    lines = input.split("\n")
+    lines = input.splitlines()
     answer = ""
 
     return answer
@@ -20,7 +22,11 @@ def solve(input: str):
 
 if __name__ == "__main__":
     aoc = AocUtil(__file__)
-    input = aoc.read_input()
+    filename = sys.argv[1]
+    print(f"Reading file {filename}")
+    input = aoc.read_input(filename=filename)
     answer = solve(input)
     aoc.print_answer(answer)
-    aoc.submit(answer)
+
+    if filename == "input.txt":
+        aoc.submit(answer)

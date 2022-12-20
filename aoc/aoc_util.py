@@ -1,3 +1,4 @@
+import sys
 import logging
 import os
 
@@ -20,8 +21,8 @@ class AocUtil:
             f"Initializing AoC {self.year} challenge day {self.day} part {self.part}"
         )
 
-    def read_input(self):
-        input_file = os.path.join(self.src_dir, "input.txt")
+    def read_input(self, filename="input.txt"):
+        input_file = os.path.join(self.src_dir, filename)
         LOG.info(f"Loading file {input_file}")
 
         with open(input_file) as f:
