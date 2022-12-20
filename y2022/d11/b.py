@@ -4,6 +4,7 @@ import os
 import re
 from functools import reduce
 from pprint import pprint
+
 from advent_of_code_ocr import convert_6
 
 from aoc.aoc_util import AocUtil
